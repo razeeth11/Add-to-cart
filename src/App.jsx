@@ -8,14 +8,21 @@ import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
 import Badge from "@mui/material/Badge";
 
 function App() {
+  const [data, setData] = useState(products);
+
+  const style = {
+    color : "white",
+    padding : "5px"
+  }
+  
   return (
     <div className="App">
       <AppBar position="static">
         <Toolbar>
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-            Cart Page
+            Products ( {data.length} )
           </Typography>
-          <Badge badgeContent={4} color="secondary">
+          <Badge sx={style} badgeContent={1} color='secondary' >
             <ShoppingCartOutlinedIcon />
           </Badge>
         </Toolbar>
@@ -27,6 +34,7 @@ function App() {
 
 function Products() {
   const [data, setData] = useState(products);
+
   return (
     <div className="product">
       {data.map((item, index) => (
