@@ -32,7 +32,16 @@ function ProductsComp({props,index}){
       </div>
       <div className="button-tag">
         <button>Buy Now</button>
-        <button onClick={()=>console.log(index)}>Add To Cart</button>
+        <button onClick={()=>console.log(
+          {
+            Mobile : MobileName,
+            img : img,
+            Brand : Brand,
+            Price : Price,
+            Spec: Spec,
+            Offer : Offer
+          }
+        )}>Add To Cart</button>
       </div>
       </div>
     </div>
