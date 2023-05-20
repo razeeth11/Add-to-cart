@@ -6,6 +6,7 @@ import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
 import Badge from "@mui/material/Badge";
+import Button from '@mui/material/Button';
 
 function App() {
   const [data, setData] = useState(products);
@@ -22,9 +23,11 @@ function App() {
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
             Products ( {data.length} )
           </Typography>
+          <Button>
           <Badge sx={style} badgeContent={1} color='secondary' >
             <ShoppingCartOutlinedIcon />
           </Badge>
+          </Button>
         </Toolbar>
       </AppBar>
       <Products />
