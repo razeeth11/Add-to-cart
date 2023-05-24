@@ -18,7 +18,7 @@ function App() {
   
   return (
     <div className="App">
-      <AppBar position="static">
+      <AppBar position="sticky" sx={{top : '0px'}}>
         <Toolbar>
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
             Products ( {data.length} )
