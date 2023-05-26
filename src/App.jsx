@@ -50,8 +50,10 @@ function Products() {
 function ProductsComp({ props, index }) {
   const { Price, MobileName, img, Brand, Offer, Spec } = props;
 
+  const [items,setItems] = useState([])
+
   return (
-    <div className="products">
+    <div className="products" key={index}>
       <div className="image-div">
         <img src={img} alt={MobileName} width="100px" />
       </div>
@@ -68,17 +70,18 @@ function ProductsComp({ props, index }) {
           </h3>
         </div>
         <div className="button-tag">
-          <button>Buy Now</button>
+          <button
+          onClick={()=>console.log(items)}>Buy Now</button>
           <button
             onClick={() =>
-              console.log({
+              setItems([...items,{
                 Mobile: MobileName,
                 img: img,
                 Brand: Brand,
                 Price: Price,
                 Spec: Spec,
                 Offer: Offer,
-              })
+              }])
             }
           >
             Add To Cart
